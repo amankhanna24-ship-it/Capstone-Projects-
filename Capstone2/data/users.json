@@ -1,0 +1,10 @@
+{
+  "_readme": "Simulated identity directory for tenant-aware retrieval. In production this would come from your SSO / Entra ID groups. A user sees every 'company' document plus 'department' documents for their own departments.",
+  "users": {
+    "priya":  {"name": "Priya (HR Business Partner)", "departments": ["HR"]},
+    "arjun":  {"name": "Arjun (Network on-call)",     "departments": ["IT"]},
+    "meera":  {"name": "Meera (Legal Counsel)",       "departments": ["Legal"]},
+    "tom":    {"name": "Tom (Finance Controller)",    "departments": ["Finance"]},
+    "admin":  {"name": "KB administrator",            "departments": ["HR", "Finance", "IT", "Legal"]}
+  }
+}

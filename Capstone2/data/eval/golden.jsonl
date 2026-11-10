@@ -1,0 +1,16 @@
+{"id": "q01", "question": "What happened in INC-4821 and how was it fixed?", "relevant_doc_ids": ["INC-4821"], "kind": "exact-id"}
+{"id": "q02", "question": "RB-DB-003", "relevant_doc_ids": ["RB-DB-003"], "kind": "exact-id"}
+{"id": "q03", "question": "Can I work from abroad for a few weeks?", "relevant_doc_ids": ["HR-POL-012"], "kind": "paraphrase"}
+{"id": "q04", "question": "How much can I spend on a hotel night in London?", "relevant_doc_ids": ["FIN-POL-004-v2"], "kind": "versioned"}
+{"id": "q05", "question": "Who has to sign off an expense claim of 900 pounds?", "relevant_doc_ids": ["FIN-POL-004-v2"], "kind": "paraphrase"}
+{"id": "q06", "question": "Users get error 809 when connecting to the VPN, what should I check?", "relevant_doc_ids": ["RB-NET-007", "INC-4830", "INC-4821"], "kind": "mixed"}
+{"id": "q07", "question": "What uptime does Acme Cloud guarantee and what compensation do we get if they miss it?", "relevant_doc_ids": ["CTR-2025-044"], "kind": "paraphrase"}
+{"id": "q08", "question": "How much notice do we need to give to end the Acme Cloud contract?", "relevant_doc_ids": ["CTR-2025-044"], "kind": "paraphrase"}
+{"id": "q09", "question": "How do I promote a Postgres replica to be the new primary?", "relevant_doc_ids": ["RB-DB-003"], "kind": "paraphrase"}
+{"id": "q10", "question": "Where is our payroll data physically processed?", "relevant_doc_ids": ["CTR-2026-009"], "kind": "paraphrase"}
+{"id": "q11", "question": "I clicked a dodgy link in an email, what do I do now?", "relevant_doc_ids": ["IT-SEC-FAQ"], "kind": "paraphrase"}
+{"id": "q12", "question": "Which incidents were caused by an expired certificate?", "relevant_doc_ids": ["INC-4821"], "kind": "mixed"}
+{"id": "q13", "question": "Is there an allowance for buying a desk and chair for home?", "relevant_doc_ids": ["HR-POL-012"], "kind": "paraphrase"}
+{"id": "q14", "question": "Do I need MFA to read work email on my own phone?", "relevant_doc_ids": ["IT-SEC-FAQ"], "kind": "paraphrase"}
+{"id": "q15", "question": "What changed between version 1 and version 2 of the travel and expenses policy?", "relevant_doc_ids": ["FIN-POL-004-v2", "FIN-POL-004-v1"], "kind": "summary"}
+{"id": "q16", "question": "Have we had database outages and how long did they take to recover?", "relevant_doc_ids": ["INC-5017", "INC-5240", "RB-DB-003"], "kind": "summary"}

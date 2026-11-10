@@ -1,0 +1,116 @@
+{
+  "_readme": "One entry per source. Metadata here is copied onto every chunk. Dates are ISO (YYYY-MM-DD). visibility: 'company' = every employee may see it, 'department' = only users in that department. Set enabled=false to skip an entry. Add 'url' instead of 'path' to ingest a live web page.",
+  "documents": [
+    {
+      "path": "raw/policies/HR-POL-012_remote_hybrid_working.pdf",
+      "doc_id": "HR-POL-012",
+      "doc_family": "HR-POL-012",
+      "title": "Remote and Hybrid Working Policy",
+      "department": "HR",
+      "doc_type": "policy",
+      "visibility": "company",
+      "version": "3.0",
+      "effective_date": "2026-01-15"
+    },
+    {
+      "path": "raw/policies/FIN-POL-004_travel_expenses_v1.pdf",
+      "doc_id": "FIN-POL-004-v1",
+      "doc_family": "FIN-POL-004",
+      "title": "Travel and Expenses Policy v1.0",
+      "department": "Finance",
+      "doc_type": "policy",
+      "visibility": "company",
+      "version": "1.0",
+      "effective_date": "2024-04-01"
+    },
+    {
+      "path": "raw/policies/FIN-POL-004_travel_expenses_v2.pdf",
+      "doc_id": "FIN-POL-004-v2",
+      "doc_family": "FIN-POL-004",
+      "title": "Travel and Expenses Policy v2.0",
+      "department": "Finance",
+      "doc_type": "policy",
+      "visibility": "company",
+      "version": "2.0",
+      "effective_date": "2026-04-01"
+    },
+    {
+      "path": "raw/contracts/CTR-2025-044_acme_cloud_msa.docx",
+      "doc_id": "CTR-2025-044",
+      "doc_family": "CTR-2025-044",
+      "title": "Acme Cloud Master Services Agreement",
+      "department": "Legal",
+      "doc_type": "contract",
+      "visibility": "department",
+      "version": "1.0",
+      "effective_date": "2025-07-01"
+    },
+    {
+      "path": "raw/contracts/CTR-2026-009_nimbus_payroll_dpa.docx",
+      "doc_id": "CTR-2026-009",
+      "doc_family": "CTR-2026-009",
+      "title": "Nimbus Payroll Data Processing Agreement",
+      "department": "Legal",
+      "doc_type": "contract",
+      "visibility": "department",
+      "version": "1.0",
+      "effective_date": "2026-03-01"
+    },
+    {
+      "path": "raw/runbooks/RB-NET-007_vpn_outage.md",
+      "doc_id": "RB-NET-007",
+      "doc_family": "RB-NET-007",
+      "title": "Remote-access VPN outage runbook",
+      "department": "IT",
+      "doc_type": "runbook",
+      "visibility": "department",
+      "version": "2.3",
+      "effective_date": "2025-11-10"
+    },
+    {
+      "path": "raw/runbooks/RB-DB-003_postgres_failover.md",
+      "doc_id": "RB-DB-003",
+      "doc_family": "RB-DB-003",
+      "title": "PostgreSQL primary failover runbook",
+      "department": "IT",
+      "doc_type": "runbook",
+      "visibility": "department",
+      "version": "1.4",
+      "effective_date": "2026-02-20"
+    },
+    {
+      "path": "raw/web/it_security_faq.html",
+      "doc_id": "IT-SEC-FAQ",
+      "doc_family": "IT-SEC-FAQ",
+      "title": "IT Security FAQ (intranet page)",
+      "department": "IT",
+      "doc_type": "faq",
+      "visibility": "company",
+      "version": "2025.09",
+      "effective_date": "2025-09-01"
+    },
+    {
+      "path": "raw/tickets/it_incidents.csv",
+      "loader": "csv_rows",
+      "id_field": "ticket_id",
+      "date_field": "opened",
+      "title_template": "Incident {ticket_id} ({priority}, {category})",
+      "department": "IT",
+      "doc_type": "ticket",
+      "visibility": "department",
+      "version": "1"
+    },
+    {
+      "enabled": false,
+      "url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "doc_id": "WEB-RAG-001",
+      "doc_family": "WEB-RAG-001",
+      "title": "Example live web page (switch enabled to true to try it)",
+      "department": "IT",
+      "doc_type": "web",
+      "visibility": "company",
+      "version": "live",
+      "effective_date": "2026-01-01"
+    }
+  ]
+}
