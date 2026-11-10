@@ -1,0 +1,18 @@
+# docker-compose.yml - a short "recipe card" so you can start everything with one command:
+#
+#     docker compose up --build        (start; add -d to run in the background)
+#     docker compose down              (stop)
+#
+# Docker Compose reads this file, builds the image from the Dockerfile and
+# starts the container with the right port and settings.
+
+services:
+  mcp-server:
+    build: .
+    container_name: financial-research-mcp
+    ports:
+      - "8000:8000"          # "laptop port : container port"
+    environment:
+      # Set to "true" to force offline sample data (useful for demos)
+      USE_SAMPLE_DATA: ${USE_SAMPLE_DATA:-false}
+    restart: unless-stopped

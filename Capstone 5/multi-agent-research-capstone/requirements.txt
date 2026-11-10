@@ -1,0 +1,14 @@
+# Everything for the whole project. Install with:
+#     pip install -r requirements.txt
+
+# --- MCP server ---
+-r requirements-mcp.txt
+
+# --- Code-first agent frameworks ---
+crewai>=1.0
+crewai-tools[mcp]>=1.0
+google-adk>=1.10
+
+# --- Helpers ---
+python-dotenv>=1.0
+pytest>=8.0

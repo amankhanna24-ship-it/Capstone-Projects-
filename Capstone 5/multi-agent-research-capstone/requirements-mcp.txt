@@ -1,0 +1,11 @@
+# Libraries needed ONLY by the MCP server (used inside Docker)
+#
+# Why the "<4" and "<2" limits? FastMCP 4 needs version 2 of the "mcp" library,
+# but CrewAI still needs version 1. These limits keep everything compatible
+# in one virtual environment. (Tested: fastmcp 3.4.11 + mcp 1.30.0.)
+fastmcp>=2.12,<4
+mcp>=1.30,<2
+yfinance>=0.2.50
+pandas>=2.0
+numpy>=1.26
+pydantic>=2.6

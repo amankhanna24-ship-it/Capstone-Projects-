@@ -1,0 +1,59 @@
+# flowise-compose.yml - runs Flowise with a PostgreSQL database.
+#
+# WHY: recent Flowise images crash on start-up with
+#   "TypeError: this.db.exec is not a function" (connect-sqlite3)
+# when they use their default SQLite database. Giving Flowise a PostgreSQL
+# database avoids that broken code path completely.
+#
+# START (from the main project folder):
+#   docker compose -f visual_workflow/flowise-compose.yml up -d
+# STOP:
+#   docker compose -f visual_workflow/flowise-compose.yml down
+#   (your flows are kept in the "flowise_db" volume and come back next time)
+#
+# Then open http://localhost:3000
+# MCP server address to use inside Flowise:  http://host.docker.internal:8000/mcp
+
+services:
+  flowise-db:
+    image: postgres:16
+    container_name: flowise-db
+    environment:
+      POSTGRES_USER: flowise
+      POSTGRES_PASSWORD: flowise
+      POSTGRES_DB: flowise
+    volumes:
+      - flowise_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flowise -d flowise"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  flowise:
+    image: flowiseai/flowise:3.1.4
+    container_name: flowise
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_TYPE: postgres
+      DATABASE_HOST: flowise-db
+      DATABASE_PORT: "5432"
+      DATABASE_NAME: flowise
+      DATABASE_USER: flowise
+      DATABASE_PASSWORD: flowise
+      # Flowise blocks outbound requests to "private" addresses by default, as protection
+      # against server-side request forgery. Our MCP server IS on a private address (your
+      # Mac), so for this local, single-user demo we switch that check off.
+      # Do NOT do this on a Flowise server that other people can reach.
+      HTTP_SECURITY_CHECK: "false"
+    depends_on:
+      flowise-db:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # lets Flowise reach the MCP server on your Mac
+    restart: unless-stopped
+
+volumes:
+  flowise_db:
