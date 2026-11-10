@@ -1,6 +1,0 @@
-{
-  "_readme": "USD per 1 million tokens. Add one entry per model ID you set in .env, copying prices from each provider's pricing page on the day you run. Keys starting with _ are ignored. A model with no entry shows cost as n/a.",
-  "models": {
-    "_example-model-id": { "input_per_million": 1.00, "output_per_million": 4.00 }
-  }
-}
