@@ -1,0 +1,15 @@
+# Core (needed for m3_react_agent.py)
+openai>=1.40
+anthropic>=0.40
+requests>=2.31
+beautifulsoup4>=4.12
+python-dotenv>=1.0
+upstash-redis>=1.1
+tavily-python>=0.5
+ddgs>=9.0
+
+# Bonus LangGraph version only
+langgraph>=0.2
+langchain-core>=0.3
+langchain-openai>=0.2
+# langchain-anthropic>=0.2   # uncomment if you use Claude with the bonus file

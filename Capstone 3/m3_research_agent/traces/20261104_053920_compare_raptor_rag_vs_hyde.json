@@ -1,0 +1,199 @@
+{
+  "question": "Compare Raptor RAG vs HyDE",
+  "stats": {
+    "question": "Compare Raptor RAG vs HyDE",
+    "model": "openai/gpt-4o-mini",
+    "steps_used": "9 / 12",
+    "tokens_used": "24046 / 80000",
+    "seconds": "26 / 20",
+    "stop_reason": "agent decided goal was met (I have gathered and compared detailed information on Raptor RAG and HyDE, covering their methodologies, advantages, and limitations.)",
+    "notes_saved": 2,
+    "sources_seen": 10,
+    "sources_cited": 2,
+    "context_trims": 0,
+    "long_term_memory": "upstash"
+  },
+  "events": [
+    {
+      "t": 0.1,
+      "step": null,
+      "kind": "SYSTEM",
+      "text": "Recalled 2 past research item(s) from upstash: Compare Raptor RAG vs HyDE; Compare Raptor RAG vs HyDE"
+    },
+    {
+      "t": 2.5,
+      "step": 1,
+      "kind": "THOUGHT",
+      "text": "I need to gather detailed information about both Raptor RAG and HyDE to compare their methodologies, advantages, and use cases. I will start by searching for specific details about Raptor RAG and then do the same for HyDE. This will help me understand their differences and similarities better."
+    },
+    {
+      "t": 2.5,
+      "step": 1,
+      "kind": "ACTION",
+      "text": "web_search {\"query\": \"Raptor RAG retrieval technique details\"}"
+    },
+    {
+      "t": 4.1,
+      "step": 1,
+      "kind": "OBSERVATION",
+      "text": "Search results for 'Raptor RAG retrieval technique details' (engine: duckduckgo):\n[1] RAPTOR RAG Explained: Building Hierarchical Retrieval for Smarter AI ...\n    URL: https://machinelearningplus.com/gen-ai/raptor-rag-explained-building-hierarchical-retrieval-for-smarter-ai-answers/\n    RAPTOR RAG Explained: Building Hierarchical Retrieval for Smarter AI Answers RAPTOR (Recursive Abstractive Processing for Tree-Organized Retrieval) is an advanced RAG technique that creates hierarchical tree structures from your documents, allowing you to retrieve information at different levels of \n[2] Raptor RAG explained: A full guide to hierarchical retrieval\n    URL: https://www.meilisearch.com/blog/raptor-rag\n    Raptor RAG explained: A full guide to hierarchical retrieval Learn what RAPTOR RAG is, how it differs from other RAG methods, and how to implement it in Python.\n[3] GitHub - profintegra/raptor-rag: The official implementation of RAPTOR ...\n    URL: https://github.com/profintegra/raptor-rag\n    RAPTOR introduces a novel approach to retrieval-augmented language models by constructing a recursive tree structure from documents. This allows for more efficient and context-aware information retrieval across large texts, addressing common limitations in traditional language models. For detailed m\n[4] RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval\n    URL: https://arxiv.org/html/2401.18059v1\n    At inference time, our RAPTOR model retrieves from this tree, integrating information across lengthy documents at different levels of abstraction. Controlled experiments show that retrieval with recursive summaries offers significant improvements over traditional retrieval-augmented LMs on several t\n[5] RAPTOR Zero-to-Hero: Master Recursive Tree Retrieval for Advanced RAG ...\n    URL: https://martinuke0.github.io/posts/2026-01-04-raptor-zero-to-hero-master-recursive-tree-retrieval-for-advanced-rag-systems/\n    Retrieval-Augmented Generation (RAG) revolutionized AI by grounding LLMs in external knowledge, but traditional flat-chunk retrieval struggles with long, complex documents requiring multi-hop reasoning. RAPTOR (Recursive Abstractive Processing for Tree-Organized Retrieval) solves this by building hi"
+    },
+    {
+      "t": 5.6,
+      "step": 2,
+      "kind": "THOUGHT",
+      "text": "I found several sources that explain Raptor RAG in detail. I will fetch the first two pages to gather comprehensive information about its structure, advantages, and how it operates. This will help me understand its retrieval mechanism better."
+    },
+    {
+      "t": 5.6,
+      "step": 2,
+      "kind": "ACTION",
+      "text": "fetch_page {\"url\": \"https://machinelearningplus.com/gen-ai/raptor-rag-explained-building-hierarchical-retrieval-for-smarter-ai-answers/\", \"focus\": \"details about Raptor RAG\"}"
+    },
+    {
+      "t": 5.9,
+      "step": 2,
+      "kind": "OBSERVATION",
+      "text": "[1] RAPTOR RAG Explained: Building Hierarchical Retrieval for Smarter AI Answers - machinelearningplus\nVery little readable text was found on this page (it may need JavaScript). QUALITY WARNING: try another source."
+    },
+    {
+      "t": 7.2,
+      "step": 3,
+      "kind": "THOUGHT",
+      "text": "The first page did not provide useful information due to a quality warning. I will now fetch the second source, which is likely to have more accessible content about Raptor RAG."
+    },
+    {
+      "t": 7.2,
+      "step": 3,
+      "kind": "ACTION",
+      "text": "fetch_page {\"url\": \"https://www.meilisearch.com/blog/raptor-rag\", \"focus\": \"details about Raptor RAG\"}"
+    },
+    {
+      "t": 8.1,
+      "step": 3,
+      "kind": "OBSERVATION",
+      "text": "[2] Raptor RAG explained: A full guide to hierarchical retrieval | Meilisearch\nURL: https://www.meilisearch.com/blog/raptor-rag\n---\nIn 2024, researchers at Stanford published a new standard for chunking and organization called Recursive Abstractive Processing for Tree-Organized Retrieval (RAPTOR).\nRAPTOR changes the way retrieval-augmented generation (RAG) works with chunked documents. Instead of creating chunks and storing them randomly, RAPTOR creates a hierarchical tree structure of chunks, categorizes them, and writes summaries for each group.\nRAPTOR gives users more precise answers because hierarchical summaries contain high-level information that LLMs can search.\nMore precise details are contained in each 'leaf' of the tree. To find answers, the LLM searches summaries and then drills down into the data contained in branches and leaves.\nHere's how to effectively use RAPTOR in your RAG systems.\nRAPTOR RAG changes how document chunks are organized for large-language-model processing. Instead of chunking documents into individual sections, RAPTOR RAG stores the chunks as a tree.\nImagine that you have several chunks for a dozen documents. RAPTOR RAG takes the chunks and organizes them by category.\nBecause chunked data is organized into a tree, using RAPTOR RAG also improves the accuracy of query answers.\nThe number of summaries in a RAPTOR RAG depends on the number of documents in your data silos.\nHow does RAPTOR differ from GraphRAG, CRAG, and other advanced RAG methods?\nRAPTOR was introduced to solve problems with simple chunking and data indexing . It's one of the many ways chunked data can be organized and used with LLM queries.\nRAPTOR RAG primarily addresses latency and accuracy of large document chunks.\nBoth of these problems are better solved with the improved organization that RAPTOR RAG offers.\nWith a RAPTOR RAG strategy, queries no longer search through scattered data or rely only on flat retrieval when semantic meaning is distributed across multiple documents. It's a better strategy overall if your core data spans multiple long documents.\nRAPTOR RAG works in five steps: chunking, generating embeddings, clustering similar chunks, creating cluster similarities, and building a recursive tree.\nIn RAPTOR RAG, chunking can be done in three ways:\nSince RAPTOR RAG uses a hierarchy, the cluster summaries at the top end of the tree are very few. The iteration summaries, as RAG works its way up the tree, become increasingly abstract.\nImplementing a RAPTOR RAG takes several steps, but you can perform each one in Python.\nWhat are RAPTOR RAG's limitations and known failure modes?\nRAPTOR RAG has several advantages, but it has limitations you should learn about before you decide to implement it.\nConstant updates to dynamic data: If your source data changes frequently, you must rebuild the tree. This can be time-consuming and cost more than necessary. Businesses might prefer to use RAPTOR RAG on documents that change infrequently or stay static.\nToo complex for simple queries: RAPTOR RAG is best for answers that require integrating data from multiple documents. Using it on simple queries will unnecessarily waste LLM tokens and AI budgets.\nDocument ingestion errors: If your Python script throws an error when ingesting and chunking documents, the RAPTOR RAG system loses context. Without relevant context, the system can hallucinate and return incomplete and inaccurate answers.\nRAPTOR RAG is a good option when your retrieval system needs to answer complex questions across long documents, multiple sections, or scattered pieces of context."
+    },
+    {
+      "t": 10.0,
+      "step": 4,
+      "kind": "THOUGHT",
+      "text": "I have gathered detailed information about Raptor RAG, including its structure, advantages, and limitations. Now, I will save a note summarizing these findings. After that, I will search for information on HyDE to compare it with Raptor RAG."
+    },
+    {
+      "t": 10.0,
+      "step": 4,
+      "kind": "ACTION",
+      "text": "save_note {\"note\": \"Raptor RAG (Recursive Abstractive Processing for Tree-Organized Retrieval) organizes document chunks into a hierarchical tree structure, improving retrieval accuracy for complex queries across long documents. It generates summaries at different levels, allowing for precise answers. However, it requires constant updates for dynamic data and may be too complex for simple queries.\", \"source_ids\": [2]}"
+    },
+    {
+      "t": 10.0,
+      "step": 4,
+      "kind": "OBSERVATION",
+      "text": "Saved note #1 (sources [2]). Total notes: 1."
+    },
+    {
+      "t": 11.4,
+      "step": 5,
+      "kind": "THOUGHT",
+      "text": "Now that I have information about Raptor RAG, I will search for details about HyDE to understand its methodology, advantages, and how it compares to Raptor RAG."
+    },
+    {
+      "t": 11.4,
+      "step": 5,
+      "kind": "ACTION",
+      "text": "web_search {\"query\": \"HyDE retrieval technique details\"}"
+    },
+    {
+      "t": 14.4,
+      "step": 5,
+      "kind": "OBSERVATION",
+      "text": "Search results for 'HyDE retrieval technique details' (engine: duckduckgo):\n[6] HyDE for RAG Explained: How Hypothetical Document Embeddings ...\n    URL: https://machinelearningplus.com/gen-ai/hypothetical-document-embedding-hyde-a-smarter-rag-method-to-search-documents/\n    Hypothetical Document Embeddings (HyDE) is an advanced technique in information retrieval (IR) for RAG systems designed to improve search accuracy when little or relevant documents exist in the dataset yet.\n[7] Advanced RAG Techniques 2026: Reranking, HyDE, Parent-Child ...\n    URL: https://mljourney.com/advanced-rag-techniques-2026-reranking-hyde-parent-child-and-more/\n    Sep 1, 2026 \u00b7 Advanced RAG retrieval techniques beyond basic vector search. Covers cross-encoder reranking, HyDE, parent-child chunking, RAG Fusion, and when each improves retrieval quality.\n[8] Introduction to Hypothetical Document Embeddings (HyDE)\n    URL: https://www.geeksforgeeks.org/data-science/hypothetical-document-embeddings-hyde-hyde/\n    Feb 10, 2026 \u00b7 HyDE (Hypothetical Document Embedding) is an extension of traditional retrieval in Retrieval Augmented Generation (RAG) where the system generates a hypothetical document before retrieval. Instead of converting queries to embeddings directly, it expands the query with richer context t\n[9] GitHub - texttron/hyde: HyDE: Precise Zero-Shot Dense ...\n    URL: https://github.com/texttron/hyde\n    HyDE: Precise Zero-Shot Dense Retrieval without Relevance Labels This is code repository for the paper: HyDE: Precise Zero-Shot Dense Retrieval without Relevance Labels. HyDE zero-shot instructs GPT3 to generate a fictional document and re-encodes it with unsupervised retriever Contriever to search \n[10] [2212.10496] Precise Zero-Shot Dense Retrieval without ...HyDE and HyPE | NirDiamant/RAG_Techniques | DeepWikiHyDE (Retrieval) - Marovi AI\n    URL: https://arxiv.org/abs/2212.10496\n    Dec 20, 2022 \u00b7 While dense retrieval has been shown effective and efficient across tasks and languages, it remains difficult to create effective fully zero-shot dense retrieval systems when no relevance label is available. In this paper, we recognize the difficulty of zero-shot learning and encoding"
+    },
+    {
+      "t": 16.0,
+      "step": 6,
+      "kind": "THOUGHT",
+      "text": "I found several sources that discuss HyDE and its methodology. I will fetch the first two pages to gather comprehensive information about HyDE's approach, advantages, and how it operates."
+    },
+    {
+      "t": 16.0,
+      "step": 6,
+      "kind": "ACTION",
+      "text": "fetch_page {\"url\": \"https://machinelearningplus.com/gen-ai/hypothetical-document-embedding-hyde-a-smarter-rag-method-to-search-documents/\", \"focus\": \"details about HyDE\"}"
+    },
+    {
+      "t": 16.3,
+      "step": 6,
+      "kind": "OBSERVATION",
+      "text": "[6] HyDE for RAG Explained: How Hypothetical Document Embeddings Boost Retrieval Accuracy\nVery little readable text was found on this page (it may need JavaScript). QUALITY WARNING: try another source."
+    },
+    {
+      "t": 17.8,
+      "step": 7,
+      "kind": "THOUGHT",
+      "text": "The first page did not provide useful information due to a quality warning. I will now fetch the second source, which may have more accessible content about HyDE."
+    },
+    {
+      "t": 17.8,
+      "step": 7,
+      "kind": "ACTION",
+      "text": "fetch_page {\"url\": \"https://www.geeksforgeeks.org/data-science/hypothetical-document-embeddings-hyde-hyde/\", \"focus\": \"details about HyDE\"}"
+    },
+    {
+      "t": 17.9,
+      "step": 7,
+      "kind": "OBSERVATION",
+      "text": "[8] Introduction  to Hypothetical Document Embeddings (HyDE) - GeeksforGeeks\nURL: https://www.geeksforgeeks.org/data-science/hypothetical-document-embeddings-hyde-hyde/\n---\nPython Libraries for AI, ML, DL and Data Science\nDifference between Structured, Semi-structured and Unstructured data\nEDA - Exploratory Data Analysis in Python\nProbability Distributions in Data Science\nANOVA for Data Science and Data Analytics\nFeature Selection Techniques in Machine Learning\nFeature Engineering - Scaling, Normalization and Standardization\nData Science Interview Questions and Answers\nIntroduction to Hypothetical Document Embeddings (HyDE)\nHyDE (Hypothetical Document Embedding) is an extension of traditional retrieval in Retrieval Augmented Generation (RAG) where the system generates a hypothetical document before retrieval. Instead of converting queries to embeddings directly, it expands the query with richer context to improve semantic understanding and retrieval accuracy.\nGenerates a hypothetical document to enrich the query context\nImproves understanding of short or ambiguous queries\nFocuses on semantic meaning rather than keywords\nHelps produce more accurate responses in RAG pipelines\nThis approach helps overcome the limitations of short or ambiguous queries by adding richer semantic context, leading to more accurate retrieval results.\nTraditional semantic retrieval systems typically convert the user\u2019s query directly into an embedding and search for similar documents. While this approach works well in many cases, it has some limitations:\nShort or vague queries: Users often write very short queries that do not fully describe their intent. This lack of detail makes it harder for the system to understand what information is actually needed.\nMissing semantic context: Important background information or related concepts may not be present in the query. As a result, relevant documents that use different wording or terminology may not be retrieved.\nIntent mismatch: Direct query embeddings rely heavily on the exact phrasing used by the user, which can lead to results that are only partially aligned with the intended meaning.\nHyDE addresses these challenges by first generating a richer, hypothetical document based on the query. This expanded representation captures deeper semantic meaning, helping the retrieval system find more relevant and contextually accurate results.\nThe HyDE workflow improves semantic retrieval by expanding a user\u2019s query into a richer representation before searching. Each step in the process helps add context and improve retrieval accuracy.\nThis is the starting point where the system receives a query from the user. Since many queries are short or unclear, additional processing is needed to better understand the intent.\nThe user submits a natural language query.\nIt often lacks sufficient context for accurate retrieval.\nInstead of embedding the query directly, a language model generates a hypothetical answer or detailed passage. This step enriches the original query with more semantic information.\nThe system creates a detailed hypothetical response.\nThe generated hypothetical text is converted into a numerical vector representation called an embedding. This allows semantic comparison with stored documents.\nImproves similarity matching during retrieval.\nThe embedding is used to search a vector database or document store to find relevant information.\nRetrieves documents closely related to meaning, not just keywords.\nIn a RAG pipeline, the retrieved documents are provided to a language model to generate the final response for the user.\nLets see a quick difference between HyDE abd traditional Retrieval Augmen \u2026[truncated]"
+    },
+    {
+      "t": 19.6,
+      "step": 8,
+      "kind": "THOUGHT",
+      "text": "I have gathered detailed information about HyDE, including its methodology, advantages, and how it addresses limitations in traditional retrieval systems. I will save a note summarizing these findings. After that, I will compare the two techniques based on the information I have collected."
+    },
+    {
+      "t": 19.6,
+      "step": 8,
+      "kind": "ACTION",
+      "text": "save_note {\"note\": \"HyDE (Hypothetical Document Embedding) enhances traditional retrieval in RAG by generating a hypothetical document based on the user's query, enriching the context for better semantic understanding. This approach addresses issues with short or ambiguous queries, improving retrieval accuracy by focusing on semantic meaning rather than keywords.\", \"source_ids\": [8]}"
+    },
+    {
+      "t": 19.6,
+      "step": 8,
+      "kind": "OBSERVATION",
+      "text": "Saved note #2 (sources [8]). Total notes: 2."
+    },
+    {
+      "t": 22.6,
+      "step": 9,
+      "kind": "THOUGHT",
+      "text": "I now have notes on both Raptor RAG and HyDE, detailing their methodologies and advantages. I will compare the two techniques based on their retrieval mechanisms, strengths, and weaknesses to provide a comprehensive comparison.\n\n1. **Raptor RAG**:\n   - Organizes document chunks into a hierarchical tree structure.\n   - Improves retrieval accuracy for complex queries across long documents.\n   - Generates summaries at different levels, allowing for precise answers.\n   - Requires constant updates for dynamic data and may be too complex for simple queries.\n\n2. **HyDE**:\n   - Generates a hypothetical document based on the user's query to enrich context.\n   - Improves understanding of short or ambiguous queries by focusing on semantic meaning.\n   - Addresses limitations of traditional retrieval systems by capturing deeper semantic meaning.\n   - Enhances retrieval accuracy by converting the enriched query into an embedding for better matching.\n\nBoth techniques aim to improve retrieval accuracy but approach the problem differently. Raptor RAG focuses on organizing existing information hierarchically, while HyDE enhances the query itself to improve retrieval outcomes.\n\nI will now finalize my research as I have sufficient notes to answer the comparison question."
+    },
+    {
+      "t": 22.6,
+      "step": 9,
+      "kind": "ACTION",
+      "text": "finish {\"reason\": \"I have gathered and compared detailed information on Raptor RAG and HyDE, covering their methodologies, advantages, and limitations.\"}"
+    },
+    {
+      "t": 22.6,
+      "step": null,
+      "kind": "SYSTEM",
+      "text": "Loop stopped after 9 step(s): agent decided goal was met (I have gathered and compared detailed information on Raptor RAG and HyDE, covering their methodologies, advantages, and limitations.)"
+    },
+    {
+      "t": 26.1,
+      "step": null,
+      "kind": "FINAL",
+      "text": "# Compare Raptor RAG vs HyDE\n\n## Summary\nRaptor RAG and HyDE are two advanced retrieval techniques that enhance the accuracy of information retrieval. Raptor RAG organizes document chunks into a hierarchical tree structure, which improves retrieval for complex queries but may be overly complex for simpler ones and requires constant updates for dynamic data [2]. In contrast, HyDE generates a hypothetical document based on user queries, focusing on semantic meaning to improve retrieval accuracy, particularly for short or ambiguous queries [8].\n\n## Key Findings\n- Raptor RAG improves retrieval accuracy for complex queries through a hierarchical tree structure and generates summaries at different levels [2].\n- Raptor RAG may be too complex for simple queries and requires constant updates for dynamic data [2].\n- HyDE enhances traditional retrieval by generating a hypothetical document that enriches context and focuses on semantic understanding [8].\n- HyDE addresses issues with short or ambiguous queries, improving retrieval accuracy by emphasizing semantic meaning over keywords [8].\n\n## Limitations\n- The effectiveness of Raptor RAG for simple queries is uncertain due to its complexity [2].\n- The performance of HyDE in scenarios with highly structured documents has not been confirmed [8].\n\n## Sources\n[2] Raptor RAG explained: A full guide to hierarchical retrieval \u2014 https://www.meilisearch.com/blog/raptor-rag  \n[8] Introduction to Hypothetical Document Embeddings (HyDE) \u2014 https://www.geeksforgeeks.org/data-science/hypothetical-document-embeddings-hyde-hyde/  "
+    },
+    {
+      "t": 26.3,
+      "step": null,
+      "kind": "SYSTEM",
+      "text": "Saved to long-term memory (upstash) with id 3392271c"
+    }
+  ],
+  "final_output": "# Compare Raptor RAG vs HyDE\n\n## Summary\nRaptor RAG and HyDE are two advanced retrieval techniques that enhance the accuracy of information retrieval. Raptor RAG organizes document chunks into a hierarchical tree structure, which improves retrieval for complex queries but may be overly complex for simpler ones and requires constant updates for dynamic data [2]. In contrast, HyDE generates a hypothetical document based on user queries, focusing on semantic meaning to improve retrieval accuracy, particularly for short or ambiguous queries [8].\n\n## Key Findings\n- Raptor RAG improves retrieval accuracy for complex queries through a hierarchical tree structure and generates summaries at different levels [2].\n- Raptor RAG may be too complex for simple queries and requires constant updates for dynamic data [2].\n- HyDE enhances traditional retrieval by generating a hypothetical document that enriches context and focuses on semantic understanding [8].\n- HyDE addresses issues with short or ambiguous queries, improving retrieval accuracy by emphasizing semantic meaning over keywords [8].\n\n## Limitations\n- The effectiveness of Raptor RAG for simple queries is uncertain due to its complexity [2].\n- The performance of HyDE in scenarios with highly structured documents has not been confirmed [8].\n\n## Sources\n[2] Raptor RAG explained: A full guide to hierarchical retrieval \u2014 https://www.meilisearch.com/blog/raptor-rag  \n[8] Introduction to Hypothetical Document Embeddings (HyDE) \u2014 https://www.geeksforgeeks.org/data-science/hypothetical-document-embeddings-hyde-hyde/  "
+}
